@@ -1,16 +1,17 @@
 # blockchain-indexor
 
-## PrÃ-requis to avoid sort errors
+## Prerequisites to avoid sort errors
 export LC_ALL=C
 
 ## step 0
-zcat fichier.gz | tac | gzip -c > fichier.ASC.gz
+$ zcat fichier.gz | tac | gzip -c > fichier.ASC.gz
 
 ## step1
-zcat fichier.ASC.gz | python3 make_list.py 2> step1.err | gzip -c > step1.gz
+$ zcat demo.ASC.gz | python3 add_addresses.py | python3 make_list.py 2> step1.err | gzip -c > step1.gz
+
 
 ## step2
-zcat fichier.ASC.gz | python3 get_addresses.py 2> step2.err | sort -T. -S10g --parallel=24 -k1,1 -k2,2n | awk 'BEGIN{old="none";}{if ($1!=old) print $0; old=$1;}' | sort -T. -S10g --parallel=24 -nk2,2 | awk '{print "-",$1,NR-1;}' | gzip -c > step2.gz
+$ zcat demo.ASC.gz | python3 add_addresses.py | python3 get_addresses.py 2> step2.err | sort -T. -S10g --parallel=24 -k1,1 -k2,2n | awk 'BEGIN{old="none";}{if ($1!=old) print $0; old=$1;}' | sort -T. -S10g --parallel=24 -nk2,2 | awk '{print "-",$1,NR-1;}' | gzip -c > step2.gz
 
 
 ## step3
