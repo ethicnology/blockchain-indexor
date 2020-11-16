@@ -15,7 +15,7 @@
                         "value": 50.0,
                         "n": 0,
                         "scriptPubKey": {
-                            "asm": "aA OP_CHECKSIG",
+                            "asm": "aK OP_CHECKSIG",
                             "type": "pubkey"
                         }
                     }
@@ -41,7 +41,7 @@
                         "value": 50.0,
                         "n": 0,
                         "scriptPubKey": {
-                            "asm": "aH OP_CHECKSIG",
+                            "asm": "aZ OP_CHECKSIG",
                             "type": "pubkey"
                         }
                     }
@@ -60,7 +60,7 @@
                     "value": 10.0,
                     "n": 0,
                     "scriptPubKey": {
-                        "asm": "aA OP_CHECKSIG",
+                        "asm": "aK OP_CHECKSIG",
                         "type": "pubkey"
                     }
                 },
@@ -68,7 +68,7 @@
                     "value": 40.0,
                      "n": 1,
                     "scriptPubKey": {
-                        "asm": "aB OP_CHECKSIG",
+                        "asm": "aV OP_CHECKSIG",
                         "type": "pubkey"
                     }
                 }
@@ -96,7 +96,7 @@
                         "value": 50.0,
                         "n": 0,
                         "scriptPubKey": {
-                            "asm": "aX OP_CHECKSIG",
+                            "asm": "aR OP_CHECKSIG",
                             "type": "pubkey"
                         }
                     }
@@ -122,7 +122,7 @@
                         "asm": "None OP_CHECKSIG",
                         "type": "pubkeyhash",
                         "addresses": [
-                            "aF"
+                            "aX"
                         ]
                     }
                 },
