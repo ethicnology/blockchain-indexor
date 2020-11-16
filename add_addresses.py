@@ -27,5 +27,8 @@ for line in sys.stdin:
 
             assert("scriptPubKey" in vout)
             assert("asm" in vout["scriptPubKey"])
-    
+            # addresses in non OP_RETURN vout assertion
+            if(vout["scriptPubKey"]["type"] != "nulldata"):
+                assert("addresses" in vout["scriptPubKey"])
+
     sys.stdout.write(json.dumps(block) + "\n")
