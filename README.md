@@ -15,13 +15,13 @@ $ zcat demo.ASC.gz | python3 add_addresses.py | python3 get_addresses.py 2> step
 
 
 ## step3
-zcat -c step1.gz step2.gz | sort -S 200g -T . -r -k2,3 --parallel=24 | cut -d" " -f1,3 | gzip -c > step3.gz
+$ zcat -c step1.gz step2.gz | sort -S 200g -T . -r -k2,3 --parallel=24 | cut -d" " -f1,3 | gzip -c > step3.gz
 
 ## step4
-zcat step3.gz | python3 list_translate.py 2> step4.err | gzip -c > step4.gz
+$ zcat step3.gz | python3 list_translate.py 2> step4.err | gzip -c > step4.gz
 
 ## step5
-zcat step4.gz | sort -S 200g -T . -nk1,1 --parallel=24 | gzip -c > step5.gz
+$ zcat step4.gz | sort -S 200g -T . -nk1,1 --parallel=24 | gzip -c > step5.gz
 
 ## step6
-zcat fichier.ASC.gz | python3 json_translate.py 2> step6.err | gzip -c > fichier.ASC.indexed.gz
+$ zcat demo.ASC.gz | python3 add_addresses.py | python3 json_translate.py 2> step6.err | gzip -c > step6.gz
