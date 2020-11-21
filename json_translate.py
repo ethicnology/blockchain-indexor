@@ -1,8 +1,13 @@
 import sys
 import json
 import gzip
+import argparse
 
-index_file = gzip.open("step5.gz","r")
+parser = argparse.ArgumentParser()
+parser.add_argument("-f", "--file", type=str, help="Specify index file", required=True)
+args = parser.parse_args()
+
+index_file = gzip.open(args.file,"r")
 previous_occurrence = None
 
 def next_index():
