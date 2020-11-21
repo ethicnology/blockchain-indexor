@@ -1,7 +1,10 @@
 # blockchain-indexor
 
 ## Prerequisites to avoid sort errors
+```sh
+#.bashrc
 export LC_ALL=C
+```
 
 ## step 0
 Uncompress data THEN you can tac and gzip again
@@ -37,5 +40,5 @@ $ zcat step4.gz | sort -S 200g -T . -nk1,1 --parallel=24 | gzip -c > step5.gz
 
 ## step6
 ```sh
-$ zcat demo.ASC.gz | python3 add_addresses.py | python3 json_translate.py 2> step6.err | gzip -c > step6.gz
+$ zcat demo.ASC.gz | python3 add_addresses.py | python3 json_translate.py --file step5.gz 2> step6.err | gzip -c > step6.gz
 ```
