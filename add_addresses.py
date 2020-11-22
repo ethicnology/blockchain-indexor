@@ -6,7 +6,7 @@ block_id = None
 txid_index = 0
 vout_index = 0
 item_number = 0
-# Blocks
+
 for line in sys.stdin:
     block = json.loads(line)
     
@@ -19,16 +19,14 @@ for line in sys.stdin:
 
     for tx in block["tx"]:
         for vout in tx["vout"]:
+            assert("scriptPubKey" in vout)
+            assert("asm" in vout["scriptPubKey"])
             # If pubkey: create "addresses" field and put the pubkey inside
             if vout["scriptPubKey"]["type"] == "pubkey":
                 asm = vout["scriptPubKey"]["asm"].split(" ")
                 pubKey = asm[0]
                 vout["scriptPubKey"]["addresses"] = [pubKey]
-
-            assert("scriptPubKey" in vout)
-            assert("asm" in vout["scriptPubKey"])
-            # addresses in non OP_RETURN vout assertion
-            if(vout["scriptPubKey"]["type"] != "nulldata"):
+            # addresses in non nulldata or nonstandard vout assertion
+            if(vout["scriptPubKey"]["type"] != "nulldata" or vout["scriptPubKey"]["type"] != "nonstandard"):
                 assert("addresses" in vout["scriptPubKey"])
-
     sys.stdout.write(json.dumps(block) + "\n")
