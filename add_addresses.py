@@ -27,6 +27,7 @@ for line in sys.stdin:
                 pubKey = asm[0]
                 vout["scriptPubKey"]["addresses"] = [pubKey]
             # addresses in non nulldata or nonstandard vout assertion
-            if(vout["scriptPubKey"]["type"] != "nulldata" or vout["scriptPubKey"]["type"] != "nonstandard"):
-                assert("addresses" in vout["scriptPubKey"])
+            if vout["scriptPubKey"]["type"] != "nulldata":
+                if vout["scriptPubKey"]["type"] != "nonstandard":
+                    assert("addresses" in vout["scriptPubKey"])
     sys.stdout.write(json.dumps(block) + "\n")
