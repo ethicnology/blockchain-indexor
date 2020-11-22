@@ -9,7 +9,6 @@ item_number = 0
 
 for line in sys.stdin:
     block = json.loads(line)
-    
     # Block order ASC assertion
     if block_id is None:
         assert(block["height"] == 0)
