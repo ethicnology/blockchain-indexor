@@ -36,13 +36,12 @@ for line in sys.stdin:
             vout["index"] = next_index()
             item_number += 1
             if "addresses" in vout["scriptPubKey"]:
-                address_indexes = []
+                addresses_index = []
                 for address in vout["scriptPubKey"]["addresses"]:
-                    address_indexes.append(next_index())
+                    addresses_index.append(next_index())
                     item_number += 1
-                vout["scriptPubKey"]["address_indexes"] = address_indexes
+                vout["scriptPubKey"]["addresses_index"] = addresses_index
 
     sys.stdout.write(json.dumps(block) + "\n")
     sys.stderr.write("block " + str(block["height"]) + ", " + str(item_number) + " items\n")
     sys.stderr.flush()
-
