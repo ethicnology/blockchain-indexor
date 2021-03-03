@@ -9,8 +9,8 @@ export LC_ALL=C
 ## step 0
 Uncompress data THEN you can tac and gzip again
 ```sh
-$ nohup gunzip blockchain.raw.gz 2> gunzip.err &
-$ nohup tac blockchain.raw | gzip -c > blockchain.ASC.gz &
+$ nohup gunzip blockchain.DSC.gz 2> gunzip.err &
+$ nohup tac blockchain.DSC | gzip -c > blockchain.ASC.gz &
 ```
 
 ## step1
