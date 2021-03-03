@@ -11,7 +11,7 @@ for line in sys.stdin:
     block = json.loads(line)
     # Block order ASC assertion
     if block_id is None:
-        assert(block["height"] == 0)
+        block_id = block["height"]
     else:
         assert(block["height"] == block_id + 1)
     block_id = block["height"]
