@@ -9,13 +9,10 @@ item_number = 0
 
 for line in sys.stdin:
     block = json.loads(line)
-    # Block order ASC assertion
-    if block_id is None:
-        block_id = block["height"]
-    else:
-        assert(block["height"] == block_id + 1)
+    # Check block order
+    assert(block_id==None or block["height"]==block_id+1)
     block_id = block["height"]
-
+    
     for tx in block["tx"]:
         for vout in tx["vout"]:
             assert("scriptPubKey" in vout)
