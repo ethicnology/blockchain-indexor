@@ -172,14 +172,6 @@
 					  "asm":"e OP_CHECKSIG",
 					  "type":"pubkey"
 				   }
-				},
-				{
-				   "value":0.0,
-				   "n":3,
-				   "scriptPubKey":{
-					  "asm":"OP_RETURN 47726f746869656e6465636b",
-					  "type":"nulldata"
-				   }
 				}
 			 ]
 		  }
