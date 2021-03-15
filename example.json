@@ -39,7 +39,7 @@
 			 ],
 			 "vout":[
 				{
-				   "value":30,
+				   "value":30.0,
 				   "n":0,
 				   "scriptPubKey":{
 					  "asm":"OP_DUP OP_HASH160 99c4 OP_EQUALVERIFY OP_CHECKSIG",
@@ -52,7 +52,7 @@
 				   }
 				},
 				{
-				   "value":10,
+				   "value":10.0,
 				   "n":1,
 				   "scriptPubKey":{
 					  "asm":"OP_DUP OP_HASH160 99c4 OP_EQUALVERIFY OP_CHECKSIG",
@@ -120,7 +120,7 @@
 			 ],
 			 "vout":[
 				{
-				   "value":30,
+				   "value":30.0,
 				   "n":0,
 				   "scriptPubKey":{
 					  "asm":"OP_DUP OP_HASH160 99c4 OP_EQUALVERIFY OP_CHECKSIG",
@@ -134,7 +134,7 @@
 				   }
 				},
 				{
-				   "value":20,
+				   "value":20.0,
 				   "n":1,
 				   "scriptPubKey":{
 					  "asm":"OP_DUP OP_HASH160 99c4 OP_EQUALVERIFY OP_CHECKSIG",
