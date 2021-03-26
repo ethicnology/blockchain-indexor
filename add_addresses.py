@@ -19,6 +19,7 @@ for line in sys.stdin:
             assert("asm" in vout["scriptPubKey"])
             # If pubkey: create "addresses" field and put the pubkey inside
             if vout["scriptPubKey"]["type"] == "pubkey":
+                assert("addresses" not in vout["scriptPubKey"])
                 asm = vout["scriptPubKey"]["asm"].split(" ")
                 pubKey = asm[0]
                 vout["scriptPubKey"]["addresses"] = [pubKey]
